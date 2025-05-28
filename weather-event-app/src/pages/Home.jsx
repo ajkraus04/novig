@@ -15,7 +15,6 @@ import {
 import { format } from "date-fns";
 
 export const Home = () => {
-  // Get state and actions from Zustand store
   const {
     location,
     selectedDay,
@@ -38,19 +37,15 @@ export const Home = () => {
 
   const selectedTimeRangeData = getSelectedTimeRangeData();
 
-  // Use the weather control hook
   const { data, isLoading, error, handleLocationSubmit } = useWeatherControl();
 
-  // Initialize dates on mount
   useEffect(() => {
     initializeDates();
   }, [initializeDates]);
 
   return (
     <div className="min-h-screen bg-[#1a1b26] relative overflow-hidden">
-      {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a1b26] to-[#16171f]" />
-      {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-30 pointer-events-none" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#4f46e5] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#8b5cf6] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float animation-delay-2000" />
