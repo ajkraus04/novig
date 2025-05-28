@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient-angle: 135deg;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-gray-100 antialiased;
+    background-color: #1a1b26; /* dark-50 */
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #0f1014; /* dark-300 */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  /* Focus styles */
+  *:focus {
+    @apply outline-none;
+  }
+
+  *:focus-visible {
+    @apply ring-2 ring-offset-2;
+    --tw-ring-color: #6366f1; /* primary-500 */
+    --tw-ring-offset-color: #16171f; /* dark-100 */
+  }
+
+  /* Dark mode select options */
+  select option {
+    background-color: #13141a; /* dark-200 */
+    @apply text-white;
+  }
+
+  select option:hover {
+    background-color: #0f1014; /* dark-300 */
+  }
+}
+
+@layer components {
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #818cf8, #8b5cf6); /* primary-400 to accent-purple */
+  }
+
+  /* Glass morphism effect for dark theme */
+  .glass-dark {
+    @apply backdrop-blur-xl border border-gray-800/50;
+    background-color: rgba(22, 23, 31, 0.6); /* dark-100 with opacity */
+  }
+
+  /* Card glass effect */
+  .card-glass {
+    @apply backdrop-blur-xl border border-gray-800/30;
+    background: linear-gradient(to bottom right, rgba(22, 23, 31, 0.8), rgba(19, 20, 26, 0.8)); /* dark-100 to dark-200 */
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    @apply relative overflow-hidden bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%];
+  }
+
+  /* Glow effects */
+  .glow-purple {
+    @apply shadow-lg shadow-purple-500/20;
+  }
+
+  .glow-blue {
+    @apply shadow-lg shadow-blue-500/20;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+}
