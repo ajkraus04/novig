@@ -61,7 +61,8 @@ export const Home = () => {
             </h1>
           </div>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-            Plan your perfect outdoor event with AI-powered weather insights
+            Plan your perfect outdoor event with detailed weather forecasts and
+            insights
           </p>
         </header>
 
